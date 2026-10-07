@@ -163,6 +163,88 @@ With exact certification (`method="rl_exact"`, the app's default), the returned 
 **Data separation:** 37,323 training-graph seeds checked; 100 validation seeds; 205 test seeds. Overlaps: train–val 0, train–test 0, val–test 0.
 <!-- RESULTS:END -->
 
+## Setup
+
+Tested on Windows 11 with Python 3.13 (Python 3.11 or newer works). An NVIDIA GPU is optional; everything also runs
+on CPU.
+
+**1. Get the code**
+
+```powershell
+git clone https://github.com/alfredjosepht/WTDS-GNN-RL-Minimum-Weighted-Total-Dominating-Set-with-GNNs-and-Deep-Reinforcement-Learning.git wtds-gnn-rl
+cd wtds-gnn-rl
+```
+
+**2. Create a virtual environment and activate it**
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1        # PowerShell
+# .venv\Scripts\activate.bat      # Command Prompt
+# source .venv/bin/activate        # Linux / macOS
+```
+
+If PowerShell says running scripts is disabled, run `Set-ExecutionPolicy -Scope Process Bypass` first, then activate
+again. The prompt should now start with `(.venv)`.
+
+**3. Install the packages**
+
+```powershell
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+For an NVIDIA GPU, also install the CUDA build of PyTorch, which replaces the CPU build:
+
+```powershell
+pip install torch --index-url https://download.pytorch.org/whl/cu128
+python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
+```
+
+**4. Check that everything works**
+
+```powershell
+python -m pytest -q                 # all tests should pass (about 2 minutes)
+```
+
+The trained models (`checkpoints/best.pt`, `checkpoints/seed1_best.pt`), the pretrained TDS models they start from
+(`checkpoints/pretrained/`), the validation set and all results are part of the repository, so no training is needed
+before using the app. The generated test graphs are in `data/test/`. To regenerate them, run
+`python scripts/run_final.py sets`.
+
+**5. Start the app** (see below). Run `streamlit run app/streamlit_app.py` and open http://localhost:8501.
+
+## Saving and pushing changes to GitHub
+
+**One-time setup on a new computer.** Set the commit author for this repository only (no `--global`), and make the
+remote ask for the alfredjosepht login:
+
+```powershell
+git config user.name "alfredjosepht"
+git config user.email "alfredponmany@gmail.com"
+git remote set-url origin https://alfredjosepht@github.com/alfredjosepht/WTDS-GNN-RL-Minimum-Weighted-Total-Dominating-Set-with-GNNs-and-Deep-Reinforcement-Learning.git
+```
+
+The first `git push` opens a GitHub sign-in in the browser (Git Credential Manager). Sign in as **alfredjosepht**; the
+login is remembered for later pushes.
+
+**Each time you change something:**
+
+```powershell
+python -m pytest -q                 # make sure the tests still pass
+git status                          # see what changed
+git add -A                          # stage all changes (.gitignore keeps .venv/, runs/ and caches out)
+git commit -m "Describe the change"
+git push                            # upload to GitHub (branch main)
+```
+
+**Before pushing:**
+* Pull first if the repository was changed elsewhere, e.g. edited on github.com: `git pull --rebase`.
+* Keep large files out. GitHub rejects files over 100 MB. `.gitignore` already excludes the virtual environment, the
+  training runs (`runs/`, which hold large resume files) and the intermediate checkpoints.
+* To publish newly trained models, run `python scripts/finalize_models.py` first. It copies the best checkpoints to
+  `checkpoints/best.pt` and `checkpoints/seed1_best.pt`, and those two files are committed.
+
 ## How to run
 
 ```powershell
