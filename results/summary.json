@@ -1,0 +1,384 @@
+{
+  "validity": {
+    "solutions_checked": 2994,
+    "valid_fraction": 1.0,
+    "solutions_in_jsonl": 2994
+  },
+  "settings": {
+    "ls_time_s": 1.0,
+    "ilp_time_limit_s": 20.0,
+    "seeds": [
+      0,
+      1
+    ]
+  },
+  "headline": {
+    "instances": 120,
+    "ilp_proven": 115,
+    "ilp_not_proven": 5,
+    "gap_on_proven": {
+      "weighted_greedy": {
+        "gap_mean": 0.11483606993862744,
+        "gap_std_across_seeds": null
+      },
+      "weighted_greedy_rr": {
+        "gap_mean": 0.042744830344861644,
+        "gap_std_across_seeds": null
+      },
+      "weighted_greedy_rr_ls": {
+        "gap_mean": 0.022413018201816775,
+        "gap_std_across_seeds": null
+      },
+      "unweighted_greedy_rr": {
+        "gap_mean": 0.7822196882160014,
+        "gap_std_across_seeds": null
+      },
+      "old_tds_model_rr": {
+        "gap_mean": 0.7514076304040049,
+        "gap_std_across_seeds": 0.14892455893162426
+      },
+      "rl_rr": {
+        "gap_mean": 0.04484293436314532,
+        "gap_std_across_seeds": 0.006122574944514339
+      },
+      "rl_rr_ls": {
+        "gap_mean": 0.02188990082634093,
+        "gap_std_across_seeds": 0.0032151702983399064
+      },
+      "rl_rr_k16": {
+        "gap_mean": 0.015281713019952034,
+        "gap_std_across_seeds": 0.002959282013869222
+      },
+      "rl_rr_ls_k16": {
+        "gap_mean": 0.010193070198631558,
+        "gap_std_across_seeds": 0.00047796016789883366
+      }
+    },
+    "certified": {
+      "proven_fraction": 1.0,
+      "rl_alone_optimal_fraction": 0.5804878048780487,
+      "instances_x_seeds": 410
+    }
+  },
+  "tables": {
+    "W1": [
+      {
+        "family": "BA",
+        "n": 20,
+        "ILP proven": "15/15",
+        "W-greedy gap %": "9.82",
+        "W-greedy+RR gap %": "1.33",
+        "W-greedy+RR+LS gap %": "0.00",
+        "U-greedy+RR gap %": "46.48",
+        "Old TDS model+RR gap %": "62.27 \u00b1 24.53",
+        "Ours+RR gap %": "2.14 \u00b1 3.03",
+        "Ours+RR+LS gap %": "0.28 \u00b1 0.40",
+        "Ours+RR k16 gap %": "0.00 \u00b1 0.00",
+        "Ours+RR+LS k16 gap %": "0.00 \u00b1 0.00"
+      },
+      {
+        "family": "BA",
+        "n": 50,
+        "ILP proven": "15/15",
+        "W-greedy gap %": "10.15",
+        "W-greedy+RR gap %": "3.99",
+        "W-greedy+RR+LS gap %": "1.29",
+        "U-greedy+RR gap %": "65.17",
+        "Old TDS model+RR gap %": "62.62 \u00b1 15.02",
+        "Ours+RR gap %": "2.66 \u00b1 0.67",
+        "Ours+RR+LS gap %": "1.26 \u00b1 0.28",
+        "Ours+RR k16 gap %": "1.03 \u00b1 0.04",
+        "Ours+RR+LS k16 gap %": "0.64 \u00b1 0.00"
+      },
+      {
+        "family": "BA",
+        "n": 100,
+        "ILP proven": "15/15",
+        "W-greedy gap %": "10.35",
+        "W-greedy+RR gap %": "4.54",
+        "W-greedy+RR+LS gap %": "2.86",
+        "U-greedy+RR gap %": "67.35",
+        "Old TDS model+RR gap %": "59.28 \u00b1 5.18",
+        "Ours+RR gap %": "4.63 \u00b1 3.53",
+        "Ours+RR+LS gap %": "2.80 \u00b1 2.40",
+        "Ours+RR k16 gap %": "1.38 \u00b1 0.10",
+        "Ours+RR+LS k16 gap %": "1.00 \u00b1 0.08"
+      },
+      {
+        "family": "BA",
+        "n": 200,
+        "ILP proven": "15/15",
+        "W-greedy gap %": "12.85",
+        "W-greedy+RR gap %": "5.71",
+        "W-greedy+RR+LS gap %": "3.53",
+        "U-greedy+RR gap %": "61.53",
+        "Old TDS model+RR gap %": "63.91 \u00b1 16.00",
+        "Ours+RR gap %": "5.83 \u00b1 0.11",
+        "Ours+RR+LS gap %": "3.59 \u00b1 0.05",
+        "Ours+RR k16 gap %": "2.54 \u00b1 0.23",
+        "Ours+RR+LS k16 gap %": "1.61 \u00b1 0.04"
+      },
+      {
+        "family": "ER",
+        "n": 20,
+        "ILP proven": "15/15",
+        "W-greedy gap %": "11.50",
+        "W-greedy+RR gap %": "3.37",
+        "W-greedy+RR+LS gap %": "2.13",
+        "U-greedy+RR gap %": "122.78",
+        "Old TDS model+RR gap %": "100.07 \u00b1 29.67",
+        "Ours+RR gap %": "4.86 \u00b1 2.10",
+        "Ours+RR+LS gap %": "2.13 \u00b1 0.00",
+        "Ours+RR k16 gap %": "2.50 \u00b1 0.52",
+        "Ours+RR+LS k16 gap %": "2.06 \u00b1 0.10"
+      },
+      {
+        "family": "ER",
+        "n": 50,
+        "ILP proven": "15/15",
+        "W-greedy gap %": "12.01",
+        "W-greedy+RR gap %": "4.18",
+        "W-greedy+RR+LS gap %": "1.45",
+        "U-greedy+RR gap %": "83.06",
+        "Old TDS model+RR gap %": "90.28 \u00b1 15.39",
+        "Ours+RR gap %": "6.16 \u00b1 1.18",
+        "Ours+RR+LS gap %": "2.36 \u00b1 0.26",
+        "Ours+RR k16 gap %": "1.55 \u00b1 0.47",
+        "Ours+RR+LS k16 gap %": "0.75 \u00b1 0.17"
+      },
+      {
+        "family": "ER",
+        "n": 100,
+        "ILP proven": "15/15",
+        "W-greedy gap %": "13.33",
+        "W-greedy+RR gap %": "7.04",
+        "W-greedy+RR+LS gap %": "4.27",
+        "U-greedy+RR gap %": "88.20",
+        "Old TDS model+RR gap %": "76.04 \u00b1 8.00",
+        "Ours+RR gap %": "4.35 \u00b1 0.32",
+        "Ours+RR+LS gap %": "2.66 \u00b1 0.43",
+        "Ours+RR k16 gap %": "1.43 \u00b1 0.68",
+        "Ours+RR+LS k16 gap %": "0.96 \u00b1 0.33"
+      },
+      {
+        "family": "ER",
+        "n": 200,
+        "ILP proven": "10/15",
+        "W-greedy gap %": "12.05",
+        "W-greedy+RR gap %": "3.91",
+        "W-greedy+RR+LS gap %": "2.48",
+        "U-greedy+RR gap %": "97.69",
+        "Old TDS model+RR gap %": "92.41 \u00b1 0.59",
+        "Ours+RR gap %": "5.62 \u00b1 1.72",
+        "Ours+RR+LS gap %": "2.53 \u00b1 0.11",
+        "Ours+RR k16 gap %": "1.96 \u00b1 0.46",
+        "Ours+RR+LS k16 gap %": "1.18 \u00b1 0.13"
+      }
+    ],
+    "W2": [
+      {
+        "family": "BA",
+        "weights": "degree_correlated",
+        "ILP proven": "10/10",
+        "W-greedy+RR gap %": "16.99",
+        "Old TDS model+RR gap %": "21.95 \u00b1 1.89",
+        "Ours+RR gap %": "6.38 \u00b1 0.40",
+        "Ours+RR k16 gap %": "2.85 \u00b1 0.46"
+      },
+      {
+        "family": "BA",
+        "weights": "uniform_int",
+        "ILP proven": "10/10",
+        "W-greedy+RR gap %": "4.44",
+        "Old TDS model+RR gap %": "56.27 \u00b1 5.97",
+        "Ours+RR gap %": "6.40 \u00b1 2.11",
+        "Ours+RR k16 gap %": "2.13 \u00b1 0.90"
+      },
+      {
+        "family": "BA",
+        "weights": "uniform_small",
+        "ILP proven": "10/10",
+        "W-greedy+RR gap %": "7.74",
+        "Old TDS model+RR gap %": "43.50 \u00b1 11.59",
+        "Ours+RR gap %": "5.54 \u00b1 1.03",
+        "Ours+RR k16 gap %": "1.44 \u00b1 0.98"
+      },
+      {
+        "family": "BA",
+        "weights": "unit",
+        "ILP proven": "10/10",
+        "W-greedy+RR gap %": "9.44",
+        "Old TDS model+RR gap %": "3.98 \u00b1 2.27",
+        "Ours+RR gap %": "9.25 \u00b1 0.73",
+        "Ours+RR k16 gap %": "3.21 \u00b1 1.19"
+      },
+      {
+        "family": "ER",
+        "weights": "degree_correlated",
+        "ILP proven": "1/10",
+        "W-greedy+RR gap %": "18.54",
+        "Old TDS model+RR gap %": "20.98 \u00b1 6.21",
+        "Ours+RR gap %": "9.51 \u00b1 7.93",
+        "Ours+RR k16 gap %": "0.49 \u00b1 0.00"
+      },
+      {
+        "family": "ER",
+        "weights": "uniform_int",
+        "ILP proven": "10/10",
+        "W-greedy+RR gap %": "6.89",
+        "Old TDS model+RR gap %": "83.86 \u00b1 0.69",
+        "Ours+RR gap %": "5.71 \u00b1 1.18",
+        "Ours+RR k16 gap %": "0.82 \u00b1 0.17"
+      },
+      {
+        "family": "ER",
+        "weights": "uniform_small",
+        "ILP proven": "10/10",
+        "W-greedy+RR gap %": "6.31",
+        "Old TDS model+RR gap %": "60.88 \u00b1 7.17",
+        "Ours+RR gap %": "6.33 \u00b1 0.94",
+        "Ours+RR k16 gap %": "1.37 \u00b1 0.03"
+      },
+      {
+        "family": "ER",
+        "weights": "unit",
+        "ILP proven": "7/10",
+        "W-greedy+RR gap %": "10.56",
+        "Old TDS model+RR gap %": "7.46 \u00b1 3.05",
+        "Ours+RR gap %": "12.67 \u00b1 3.19",
+        "Ours+RR k16 gap %": "4.41 \u00b1 1.26"
+      }
+    ],
+    "W3": [
+      {
+        "lattice": "grid",
+        "n": 100,
+        "ILP W*": "1208",
+        "W-greedy": "1275.0",
+        "W-greedy+RR": "1258.0",
+        "W-greedy+RR+LS": "1258.0",
+        "U-greedy+RR": "2026.0",
+        "Old TDS model+RR": "1659.5 \u00b1 227.0",
+        "Ours+RR": "1234.5 \u00b1 27.6",
+        "Ours+RR+LS": "1230.5 \u00b1 21.9",
+        "Ours+RR k16": "1222.5 \u00b1 20.5",
+        "Ours+RR+LS k16": "1222.5 \u00b1 20.5"
+      },
+      {
+        "lattice": "grid",
+        "n": 400,
+        "ILP W*": "3838",
+        "W-greedy": "4254.0",
+        "W-greedy+RR": "3978.0",
+        "W-greedy+RR+LS": "3864.0",
+        "U-greedy+RR": "6703.0",
+        "Old TDS model+RR": "5097.0 \u00b1 500.6",
+        "Ours+RR": "4026.5 \u00b1 74.2",
+        "Ours+RR+LS": "3933.5 \u00b1 2.1",
+        "Ours+RR k16": "3979.5 \u00b1 36.1",
+        "Ours+RR+LS k16": "3913.0 \u00b1 33.9"
+      },
+      {
+        "lattice": "tri",
+        "n": 100,
+        "ILP W*": "1039",
+        "W-greedy": "1209.0",
+        "W-greedy+RR": "1167.0",
+        "W-greedy+RR+LS": "1074.0",
+        "U-greedy+RR": "1687.0",
+        "Old TDS model+RR": "1434.0 \u00b1 251.7",
+        "Ours+RR": "1079.0 \u00b1 33.9",
+        "Ours+RR+LS": "1069.5 \u00b1 20.5",
+        "Ours+RR k16": "1070.0 \u00b1 21.2",
+        "Ours+RR+LS k16": "1058.0 \u00b1 4.2"
+      },
+      {
+        "lattice": "tri",
+        "n": 400,
+        "ILP W*": "2378",
+        "W-greedy": "2567.0",
+        "W-greedy+RR": "2456.0",
+        "W-greedy+RR+LS": "2385.0",
+        "U-greedy+RR": "5123.0",
+        "Old TDS model+RR": "3417.0 \u00b1 558.6",
+        "Ours+RR": "2440.5 \u00b1 13.4",
+        "Ours+RR+LS": "2407.5 \u00b1 12.0",
+        "Ours+RR k16": "2430.5 \u00b1 21.9",
+        "Ours+RR+LS k16": "2412.5 \u00b1 4.9"
+      }
+    ],
+    "W4": [
+      {
+        "method": "W-greedy",
+        "W(S)": "26976.0",
+        "|S|": "1033.0",
+        "time s": "0.01"
+      },
+      {
+        "method": "W-greedy+RR",
+        "W(S)": "25683.0",
+        "|S|": "876.0",
+        "time s": "0.01"
+      },
+      {
+        "method": "Ours+RR",
+        "W(S)": "25412.0 \u00b1 234.8",
+        "|S|": "829.5 \u00b1 6.4",
+        "time s": "0.95 \u00b1 0.01"
+      }
+    ],
+    "CERT": [
+      {
+        "experiment": "W1",
+        "instances x seeds": 240,
+        "proven minimum": "100.0%",
+        "GNN+RL alone already optimal": "61.7%",
+        "equals reference optimum": "100.0%",
+        "GNN+RL time s": "0.13",
+        "certification time s": "0.02"
+      },
+      {
+        "experiment": "W2",
+        "instances x seeds": 160,
+        "proven minimum": "100.0%",
+        "GNN+RL alone already optimal": "55.6%",
+        "equals reference optimum": "100.0%",
+        "GNN+RL time s": "0.14",
+        "certification time s": "0.10"
+      },
+      {
+        "experiment": "W3",
+        "instances x seeds": 8,
+        "proven minimum": "100.0%",
+        "GNN+RL alone already optimal": "12.5%",
+        "equals reference optimum": "100.0%",
+        "GNN+RL time s": "0.68",
+        "certification time s": "0.04"
+      },
+      {
+        "experiment": "W4",
+        "instances x seeds": 2,
+        "proven minimum": "100.0%",
+        "GNN+RL alone already optimal": "0.0%",
+        "equals reference optimum": "--",
+        "GNN+RL time s": "65.34",
+        "certification time s": "1.36"
+      }
+    ]
+  },
+  "captions": {
+    "W1": "W1: random graphs, weights uniform 1-100, 15 graphs per cell. Mean weight gap to the ILP optimum (%), only on instances the ILP (limit 20 s) proved optimal. Ours / old model: mean \u00b1 std over 2 seeds. LS limit 1 s for greedy and ours.",
+    "W2": "W2: n = 100, each weight distribution, 10 graphs each. Weight gap to the proven ILP optimum (%). k16 = best of the greedy rollout and 16 sampled rollouts (temperature chosen on validation).",
+    "W3": "W3: lattices with weights uniform 1-100 (zero-shot sizes). Total weight W(S); ours: mean \u00b1 std over seeds.",
+    "W4": "W4: one Barab\u00e1si\u2013Albert graph, n = 5,000, m = 3, weights uniform 1-100.",
+    "CERT": "Certified: GNN + RL search (greedy + 16 sampled rollouts, RR, LS) whose answer warm-starts the exact CP-SAT solver, which proves it minimal or improves it (limit 20 s; 60 s for W4). 'GNN+RL alone already optimal' = the policy's own set was proven minimum. Both seeds."
+  },
+  "seed_overlap": {
+    "n_train_seeds_checked": 37323,
+    "n_val_seeds": 100,
+    "n_test_seeds": 205,
+    "train_val_overlap": 0,
+    "train_test_overlap": 0,
+    "val_test_overlap": 0
+  }
+}
