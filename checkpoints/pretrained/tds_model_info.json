@@ -1,0 +1,36 @@
+{
+  "encoder": "mpnn",
+  "hidden": 64,
+  "layers": 3,
+  "readout": "meanmax",
+  "parameters": 88129,
+  "seeds": [
+    {
+      "seed": 0,
+      "checkpoint": "checkpoints/best.pt",
+      "train_steps": 300000,
+      "best_step": 280000,
+      "best_val_gap_rr": 0.0384693306716362,
+      "best_val_gap_raw": 0.0427011682784739,
+      "best_val_frac_optimal_rr": 0.555,
+      "val_gap_greedy_rr": 0.0863798324141393,
+      "val_gap_random_rr": 0.3591331582193986,
+      "episodes": 29632,
+      "finished": true
+    },
+    {
+      "seed": 1,
+      "checkpoint": "checkpoints/seed1_best.pt",
+      "train_steps": 300000,
+      "best_step": 120000,
+      "best_val_gap_rr": 0.0440597557805581,
+      "best_val_gap_raw": 0.0465180891138915,
+      "best_val_frac_optimal_rr": 0.52,
+      "val_gap_greedy_rr": 0.0863798324141393,
+      "val_gap_random_rr": 0.3591331582193986,
+      "episodes": 29679,
+      "finished": true
+    }
+  ],
+  "validation_note": "Validation: 200 fixed graphs (n = 50\u2013100; ER, BA, WS, random geometric, lattices), all optima proven by the exact ILP. Gap = mean (|S| \u2212 optimum) / optimum. best.pt = checkpoint with the lowest gap after redundancy removal (RR)."
+}

@@ -1,0 +1,39 @@
+{
+  "encoder": "mpnn",
+  "hidden": 64,
+  "layers": 3,
+  "readout": "meanmax",
+  "parameters": 88129,
+  "reward": "weighted: r = -w(v) / mean weight",
+  "seeds": [
+    {
+      "seed": 0,
+      "checkpoint": "checkpoints/best.pt",
+      "pretrained_from": "checkpoints/pretrained/tds_seed0_best.pt",
+      "finetune_steps": 130000,
+      "best_step": 120000,
+      "val_gap_rr_step0": 0.472246798543048,
+      "val_gap_raw_step0": 0.476751534719163,
+      "best_val_gap_rr": 0.0278272581189595,
+      "best_val_gap_raw": 0.0500097623237661,
+      "best_val_frac_optimal_rr": 0.27,
+      "val_gap_weighted_greedy_rr": 0.0538385563068758,
+      "val_gap_random_rr": 0.8637405993994435
+    },
+    {
+      "seed": 1,
+      "checkpoint": "checkpoints/seed1_best.pt",
+      "pretrained_from": "checkpoints/pretrained/tds_seed1_best.pt",
+      "finetune_steps": 130000,
+      "best_step": 94000,
+      "val_gap_rr_step0": 0.4093312781895799,
+      "val_gap_raw_step0": 0.4118398529098884,
+      "best_val_gap_rr": 0.0430980272132437,
+      "best_val_gap_raw": 0.0614692550033398,
+      "best_val_frac_optimal_rr": 0.25,
+      "val_gap_weighted_greedy_rr": 0.0538385563068758,
+      "val_gap_random_rr": 0.8637405993994435
+    }
+  ],
+  "validation_note": "Validation: 100 fixed weighted graphs (n = 50-100; ER, BA, WS, random geometric, lattices; weights uniform 1-100 / 1-10 / degree-correlated), all optima proven by the exact ILP. Gap = mean (W(S) - W*) / W*. Both seeds were fine-tuned for the same number of steps (80,000, then resumed to 130,000); best.pt = lowest gap after redundancy removal."
+}
