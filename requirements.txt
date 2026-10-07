@@ -1,0 +1,16 @@
+# Python 3.11+ (developed on 3.13.4, Windows 11). CUDA torch: pip install torch --index-url https://download.pytorch.org/whl/cu128
+torch>=2.2
+numpy>=1.26
+networkx>=3.2
+scipy>=1.11
+ortools>=9.8
+pyyaml>=6.0
+pandas>=2.1
+matplotlib>=3.8
+tensorboard>=2.15
+streamlit>=1.46
+pyvis>=0.3.2
+altair>=5.0
+pytest>=8.0
+tqdm>=4.66
+playwright>=1.40   # only for browser screenshots/checks

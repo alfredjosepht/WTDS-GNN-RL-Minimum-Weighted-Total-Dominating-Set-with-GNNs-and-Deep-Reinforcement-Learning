@@ -1,0 +1,25 @@
+# Weighted fine-tuning of the previous TDS model (values = wtds/config.py DEFAULTS).
+# Only the reward changes w.r.t. the TDS system: r = -w(v) / mean weight of the graph.
+seed: 0
+device: auto
+model: {hidden: 64, layers: 3, encoder: mpnn, readout: meanmax}
+env: {reward_mode: weighted, use_forced: true, mask_mode: gain}
+train:
+  init_checkpoint: checkpoints/pretrained/tds_seed{seed}_best.pt
+  total_steps: 100000         # set from the measured speed so both seeds finish in the 45-min box
+  num_envs: 8
+  buffer_size: 50000
+  batch_size: 64
+  warmup: 2000
+  train_every: 2
+  lr: 5.0e-5
+  gamma: 1.0
+  loss: huber
+  tau: 0.005
+  eps_start: 0.3
+  eps_end: 0.05
+  eps_frac: 0.2
+  curriculum: [[1.0, 20, 100]]
+  weighted: true              # weights: uniform_int 50%, uniform_small 20%, degree_correlated 30%
+val: {every: 2000, path: data/val_set.npz, count: 100, n_min: 50, n_max: 100, ilp_time: 60}
+out: {name: wtds}

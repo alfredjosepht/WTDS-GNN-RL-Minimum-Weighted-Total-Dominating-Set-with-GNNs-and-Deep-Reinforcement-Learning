@@ -1,0 +1,5 @@
+# 1-minute smoke fine-tune.
+inherit: default.yaml
+train: {total_steps: 2000, warmup: 500, log_every: 250}
+val: {every: 1000}
+out: {name: smoke, ckpt_dir: runs/smoke_ckpt}
